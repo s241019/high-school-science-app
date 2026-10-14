@@ -211,7 +211,7 @@ body {
 
         .ranking-row{
             display:grid;
-            grid-template-columns:50px 40px 1fr 60px 70px;
+            grid-template-columns:50px 40px minmax(0,1fr) 60px 80px;
             align-items:center;
             gap:8px;
             padding:8px 0;
@@ -227,8 +227,9 @@ body {
             text-align:right;
             font-weight:bold;
             color:#2563eb;
+            white-space:nowrap;
         }
-
+        
         .gold{
             background:#f6edc3;
             border-radius:12px;
@@ -248,7 +249,12 @@ body {
             font-weight:bold;
         }
         
-        .ranking-row div:nth-child(3),
+        .ranking-row div:nth-child(3){
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-width: 0;
+        }
         .ranking-row div:nth-child(4){
             font-weight:bold;
         }
@@ -831,7 +837,7 @@ async function loadFieldViaAPI() {
     try {
 
         const response =
-            await fetch("https://api.npoint.io/590de2ac188d14dc34fa");
+            await fetch("https://api.npoint.io/98d507b2b3903001088a");
 
         if (!response.ok) {
             throw new Error(
