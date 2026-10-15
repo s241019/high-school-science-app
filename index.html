@@ -1478,10 +1478,8 @@ fetch(
   }
 )
 .then(r => r.text())
-.then(data => console.log("保存結果", data))
-.catch(err => console.error(err));
-.then(() => {
-  console.log("保存成功");
+.then(data => {
+  console.log("保存結果", data);
 })
 .catch(error => {
   console.error("保存失敗", error);
