@@ -622,6 +622,7 @@ function renderTop3(elementId, list) {
         <div class="ranking-row">
             <div>${medals[index]}</div>
             <div>${record.character || ""}</div>
+            <div>${record.userId}#${record.playerId.substring(0,4)}</div>
             <div>${record.userId}</div>
             <div>${record.field}</div>
             <div class="ranking-score">${record.score}pt</div>
@@ -1194,6 +1195,17 @@ function toggleExplanation(element) {
     }
 }
 
+let playerId = localStorage.getItem("playerId");
+
+if (!playerId) {
+  playerId = Math.random()
+    .toString(36)
+    .substring(2, 8)
+    .toUpperCase();
+
+  localStorage.setItem("playerId", playerId);
+}
+    
 function getUserName(){
 
   let name =
@@ -1432,6 +1444,7 @@ function endGame(isWin) {
 
 console.log({
   userId: getUserName(),
+　playerId: playerId,
   difficulty: selectedDiff,
   field: currentField,
   playTime: playTime,
@@ -1448,6 +1461,7 @@ fetch(
     method: "POST",
     body: JSON.stringify({
       userId: getUserName(),
+    　playerId: playerId,
       difficulty: selectedDiff,
       field: currentField,
       playTime: playTime,
