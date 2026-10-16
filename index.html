@@ -667,12 +667,22 @@ function renderMyRankings(data) {
                 </div>
 
                 <div class="my-ranking-position">
-                    ${record.rank}位
+                  ${record.rank}位 / ${data[item[1]].totalPlayers}人
+                </div>
+                
+                <div class="my-ranking-score">
+                  ${record.score}pt
                 </div>
 
-                <div class="my-ranking-score">
-                    ${record.score}pt
-                </div>
+                ${
+                  record.rank > 3
+                  ? `
+                  <div class="my-ranking-next">
+                    あと${data[item[1]].pointsToTop3}ptでランキング圏内！
+                  </div>
+                  `
+                  : ""
+                }
 
             </div>
             `;
@@ -1228,28 +1238,6 @@ function getUserName(){
 
   return name;
 
-}
-
-function displayAllRankings(data) {
-
-    console.log("ランキングデータ", data);
-    
-    renderTop3(
-      "easy-ranking",
-      data.easy || []
-    );
-
-    renderTop3(
-      "normal-ranking",
-      data.normal || []
-    );
-    
-    renderTop3(
-      "hard-ranking",
-      data.hard || []
-    );
-
-    renderMyRankings(data);
 }
 
 function renderTop3(elementId, list) {
