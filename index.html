@@ -633,86 +633,6 @@ function renderTop3(elementId, list) {
     target.innerHTML = html;
 }
 
-function renderMyRankings(data) {
-
-    const target =
-        document.getElementById(
-            "my-ranking-content"
-        );
-
-    if (!target) return;
-
-    const difficulties = [
-        ["かんたん","easy"],
-        ["ふつう","normal"],
-        ["むずかしい","hard"]
-    ];
-
-    let html = "";
-
-    difficulties.forEach(item => {
-
-        const record =
-            data[item[1]]
-            ? data[item[1]].myRank
-            : null;
-
-        if(record){
-
-            html += `
-            <div class="my-ranking-item">
-
-                <div class="my-ranking-difficulty">
-                    ${item[0]}
-                </div>
-
-                <div class="my-ranking-position">
-                  ${record.rank}位 / ${data[item[1]].totalPlayers}人
-                </div>
-                
-                <div class="my-ranking-score">
-                  ${record.score}pt
-                </div>
-
-                ${
-                  record.rank > 3
-                  ? `
-                  <div class="my-ranking-next">
-                    あと${data[item[1]].pointsToTop3}ptでランキング圏内！
-                  </div>
-                  `
-                  : ""
-                }
-
-            </div>
-            `;
-
-        } else {
-
-            html += `
-            <div class="my-ranking-item">
-
-                <div class="my-ranking-difficulty">
-                    ${item[0]}
-                </div>
-
-                <div class="my-ranking-position">
-                    --位
-                </div>
-
-                <div class="my-ranking-score">
-                    記録なし
-                </div>
-
-            </div>
-            `;
-        }
-
-    });
-
-    target.innerHTML = html;
-}
-
 function setChar(icon) {
     currentIcon = icon; updateAvatarDisplay();
     document.querySelectorAll('#char-grp .icon-circle').forEach(c => {
@@ -1296,10 +1216,14 @@ function renderTop3(elementId, list) {
 
 function renderMyRankings(data) {
 
-    const target =
-        document.getElementById(
-            "my-ranking-content"
-        );
+  console.log("renderMyRankings実行");
+
+  const target =
+    document.getElementById(
+      "my-ranking-content"
+    );
+
+    console.log(target);
 
     if (!target) return;
 
@@ -1317,6 +1241,8 @@ function renderMyRankings(data) {
             data[item[1]]
             ? data[item[1]].myRank
             : null;
+
+        console.log(item[1], record);
 
         if(record){
 
