@@ -261,10 +261,9 @@ body {
         }
 
         .my-ranking-item{
-          background:#ffffff;
+          background:white;
           border-radius:12px;
           padding:12px;
-          margin-bottom:12px;
           border:1px solid #e5e7eb;
           text-align:center;
         }
@@ -298,25 +297,60 @@ body {
         }
         
         #my-ranking-content{
-          display:flex;
-          flex-direction:column;
+          display:grid;
+          grid-template-columns:repeat(3, 1fr);
           gap:10px;
+        　align-items:stretch;
         }
 
         /* スマホ用 */
       @media screen and (max-width: 768px) {
 
-      body{
-          overflow:auto;
-          align-items:flex-start;
-          padding-top:20px;
-      }
+          body{
+            overflow:auto;
+            align-items:flex-start;
+            padding-top:20px;
+          }
+        
+          #game-container{
+            transform:scale(1);
+            transform-origin:top center;
+          }
+        
+          #my-ranking-content{
+              grid-template-columns:1fr;
+        　 }
+        
+          .my-ranking-score{
+            font-size:22px;
+            font-weight:bold;
+            color:#2563eb;
+        　 }
+        
+          .my-ranking-next{
+            font-size:11px;
+          }
 
-      #game-container{
-          transform: scale(1);
-          transform-origin: top center;
-      }
-      }
+          .my-ranking-difficulty{
+         　 font-size:15px;
+       　 }
+        
+        .my-ranking-position{
+         　 line-height:1.4;
+      　  }
+
+          .my-ranking-item{
+              background:white;
+              border-radius:10px;
+              padding:8px;
+              border:1px solid #e5e7eb;
+            
+              display:flex;
+              flex-direction:column;
+              justify-content:center;
+            }
+        
+        }
           </style>
       </head>
       <body>
