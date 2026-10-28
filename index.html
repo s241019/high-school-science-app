@@ -1200,8 +1200,6 @@ function getUserName(){
 }
 
 function renderTop3(elementId, list) {
-
-    console.log(elementId, list);
     
     const target =
         document.getElementById(elementId);
@@ -1255,15 +1253,11 @@ function renderTop3(elementId, list) {
 
 function renderMyRankings(data) {
 
-  console.log("renderMyRankings実行");
-
   const target =
     document.getElementById(
       "my-ranking-content"
     );
-
-    console.log(target);
-
+    
     if (!target) return;
 
     const difficulties = [
@@ -1281,8 +1275,6 @@ function renderMyRankings(data) {
             ? data[item[1]].myRank
             : null;
 
-        console.log(item[1], record);
-
         if(record){
 
             html += `
@@ -1290,6 +1282,10 @@ function renderMyRankings(data) {
 
                 <div class="my-ranking-difficulty">
                     ${item[0]}
+                </div>
+
+                <div class="my-ranking-score">
+                    ${record.score}pt
                 </div>
 
                 <div class="my-ranking-position">
@@ -1305,10 +1301,6 @@ function renderMyRankings(data) {
                   `
                   : ""
                 }
-
-                <div class="my-ranking-score">
-                    ${record.score}pt
-                </div>
 
             </div>
             `;
