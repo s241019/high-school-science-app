@@ -579,19 +579,19 @@ let isProcessing = false;
 function displayAllRankings(data) {
 
     renderTop3(
-        "easy-ranking",
-        data.easy ? data.easy.top3 : []
-    );
+  "easy-ranking",
+  data.easy || []
+);
 
-    renderTop3(
-        "normal-ranking",
-        data.normal ? data.normal.top3 : []
-    );
+renderTop3(
+  "normal-ranking",
+  data.normal || []
+);
 
-    renderTop3(
-        "hard-ranking",
-        data.hard ? data.hard.top3 : []
-    );
+renderTop3(
+  "hard-ranking",
+  data.hard || []
+);
 
     renderMyRankings(data);
 }
