@@ -1328,8 +1328,18 @@ function renderMyRankings(data) {
                 </div>
 
                 <div class="my-ranking-position">
-                    ${record.rank}位
+                  ${record.rank}位 / ${data[item[1]].totalPlayers}人
                 </div>
+
+                ${
+                  record.rank > 3
+                  ? `
+                    <div class="my-ranking-next">
+                      あと${data[item[1]].pointsToTop3}ptでランキング圏内！
+                    </div>
+                  `
+                  : ""
+                }
 
                 <div class="my-ranking-score">
                     ${record.score}pt
