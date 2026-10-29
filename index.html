@@ -319,7 +319,6 @@ body {
         
           #my-ranking-content{
             grid-template-columns:repeat(3, 1fr);
-            gap:6px;
         　}
         
           .my-ranking-score{
@@ -353,19 +352,6 @@ body {
             position:relative;
             overflow:hidden;
         　}
-
-          .rank-easy{
-         　 border-top:6px solid #22c55e;
-      　  }
-        
-        .rank-normal{
-         　 border-top:6px solid #3b82f6;
-     　   }
-        
-        .rank-hard{
-        　  border-top:6px solid #ef4444;
-      　  }
-
         
         }
           </style>
@@ -1345,13 +1331,7 @@ function renderMyRankings(data) {
             html += `
             <div class="my-ranking-item">
 
-                <div class="my-ranking-item ${
-                  item[1] === "easy"
-                    ? "rank-easy"
-                    : item[1] === "normal"
-                    ? "rank-normal"
-                    : "rank-hard"
-                }">
+                <div class="my-ranking-item">
                     ${item[0]}
                 </div>
 
@@ -1380,13 +1360,7 @@ function renderMyRankings(data) {
         else{
 
             html += `
-            <div class="my-ranking-item ${
-              item[1] === "easy"
-                ? "rank-easy"
-                : item[1] === "normal"
-                ? "rank-normal"
-                : "rank-hard"
-            }">
+            <div class="my-ranking-item">
 
                 <div class="my-ranking-difficulty">
                     ${item[0]}
