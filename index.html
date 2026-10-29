@@ -335,6 +335,16 @@ body {
           border-bottom:3px solid #fca5a5;
         }
 
+        .ranking-button-row{
+          display:flex;
+          gap:10px;
+          margin-top:10px;
+        }
+        
+        .ranking-button-row .btn{
+          flex:1;
+        }
+
      /* スマホ用 */
     @media screen and (max-width: 768px) {
     
@@ -412,6 +422,16 @@ body {
         
         .difficulty-hard{
           border-bottom:3px solid #fca5a5;
+        }
+
+        .ranking-button-row{
+          display:flex;
+          gap:10px;
+          margin-top:10px;
+        }
+        
+        .ranking-button-row .btn{
+          flex:1;
         }
         
     }
@@ -538,18 +558,21 @@ body {
                   <div id="hard-ranking"></div>
                 </div>
 
-                <button
-                  class="btn center-btn"
-                  onclick="showRankingScreen()">
-                  ランキング更新
-                </button>
-                
-                <button
-                class="btn center-btn"
-                onclick="changeScreen('screen-select')">
-                つぎへ
-                </button>
+                <div class="ranking-button-row">
 
+                  <button
+                    class="btn"
+                    onclick="showRankingScreen()">
+                    🔄 更新
+                  </button>
+                
+                  <button
+                    class="btn"
+                    onclick="changeScreen('screen-select')">
+                    つぎへ
+                  </button>
+                
+                </div>
                 </div>
 
 
