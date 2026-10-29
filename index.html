@@ -271,10 +271,9 @@ body {
         }
         
         .my-ranking-difficulty{
-  background:red !important;
-  border:5px solid blue !important;
-}
-
+          background:red !important;
+          border:5px solid blue !important;
+        }
         
         .my-ranking-score{
           font-size:22px;
@@ -301,64 +300,65 @@ body {
           display:grid;
           grid-template-columns:repeat(3, 1fr);
           gap:10px;
-        　align-items:stretch;
+          align-items:stretch;
         }
 
-        /* スマホ用 */
-      @media screen and (max-width: 768px) {
+     /* スマホ用 */
+    @media screen and (max-width: 768px) {
+    
+      body{
+        overflow:auto;
+        align-items:flex-start;
+        padding-top:20px;
+      }
+    
+      #game-container{
+        transform:scale(1);
+        transform-origin:top center;
+      }
+    
+      #my-ranking-content{
+        grid-template-columns:repeat(3, 1fr);
+      }
+    
+      .my-ranking-score{
+        font-size:22px;
+        font-weight:bold;
+        color:#2563eb;
+      }
+    
+      .my-ranking-next{
+        font-size:11px;
+      }
+    
+      .my-ranking-difficulty{
+        font-size:18px;
+        font-weight:bold;
+        color:#1f3c68;
+        margin-bottom:8px;
+    
+        background:none;
+        border:none;
+        border-radius:0;
+        padding:0;
+      }
+    
+      .my-ranking-position{
+        line-height:1.4;
+      }
+    
+      .my-ranking-item{
+        background:white;
+        border-radius:10px;
+        padding:8px;
+        border:1px solid #e5e7eb;
+    
+        display:flex;
+        flex-direction:column;
+      }
+    
+    }
 
-          body{
-            overflow:auto;
-            align-items:flex-start;
-            padding-top:20px;
-          }
-        
-          #game-container{
-            transform:scale(1);
-            transform-origin:top center;
-          }
-        
-          #my-ranking-content{
-            grid-template-columns:repeat(3, 1fr);
-        　}
-        
-          .my-ranking-score{
-            font-size:22px;
-            font-weight:bold;
-            color:#2563eb;
-        　 }
-        
-          .my-ranking-next{
-            font-size:11px;
-          }
-
-          .my-ranking-difficulty{
-       　   font-size:18px;
-        　  font-weight:bold;
-        　  color:#1f3c68;
-        　  margin-bottom:8px;
-        
-        　  background:none;
-        　  border:none;
-        　  border-radius:0;
-        　  padding:0;
-      　  }
-        
-          .my-ranking-position{
-         　 line-height:1.4;
-      　  }
-
-          .my-ranking-item{
-        　  background:white;
-        　  border-radius:10px;
-       　   padding:8px;
-       　   border:1px solid #e5e7eb;
-        
-         　 display:flex;
-       　   flex-direction:column;
-        　}
-        
-        }
           </style>
       </head>
       <body>
