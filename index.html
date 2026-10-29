@@ -855,6 +855,12 @@ function showRankingScreen(){
   const currentPlayerId =
     localStorage.getItem("playerId");
 
+  const url =
+        `https://script.google.com/macros/s/AKfycbx_〇〇〇/exec?api=ranking&playerId=${currentPlayerId}`;
+    
+      console.log(currentPlayerId);
+      console.log(url);
+
   fetch(
     `https://script.google.com/macros/s/AKfycbx_08cke11fr1nfvy0DDuU_-sIiHPQZUHM-CASk5BUH_D21Pz4UFA5NNFVQ6MJ5EEU1Lg/exec?api=ranking&playerId=${currentPlayerId}`
   )
