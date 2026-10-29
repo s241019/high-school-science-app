@@ -363,6 +363,28 @@ body {
         display:flex;
         flex-direction:column;
       }
+
+        .my-ranking-difficulty{
+          font-size:18px;
+          font-weight:bold;
+          color:#1f3c68;
+          margin-bottom:8px;
+        
+          display:inline-block;
+          padding-bottom:4px;
+        }
+        
+        .difficulty-easy{
+          border-bottom:4px solid #5be37a;
+        }
+        
+        .difficulty-normal{
+          border-bottom:4px solid #5b8dff;
+        }
+        
+        .difficulty-hard{
+          border-bottom:4px solid #ff5b7d;
+        }
     
     }
 
@@ -1343,7 +1365,13 @@ function renderMyRankings(data) {
             html += `
             <div class="my-ranking-item">
 
-                <div class="my-ranking-difficulty">
+                <div class="my-ranking-difficulty ${
+                  item[1] === "easy"
+                    ? "difficulty-easy"
+                    : item[1] === "normal"
+                    ? "difficulty-normal"
+                    : "difficulty-hard"
+                }">
                   ${item[0]}
                 </div>
 
@@ -1374,8 +1402,14 @@ function renderMyRankings(data) {
             html += `
             <div class="my-ranking-item">
 
-                <div class="my-ranking-difficulty">
-                    ${item[0]}
+                <div class="my-ranking-difficulty ${
+                  item[1] === "easy"
+                    ? "difficulty-easy"
+                    : item[1] === "normal"
+                    ? "difficulty-normal"
+                    : "difficulty-hard"
+                }">
+                  ${item[0]}
                 </div>
 
                 <div class="my-ranking-position">
