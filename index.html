@@ -25,9 +25,10 @@ body {
     overflow: hidden;
 }
 #game-container {
+    margin: 0 auto;
     width: min(500px, 95vw);
     max-width: 100%; 
-            background: #ffffff; border: 4px solid #cbd5e1; padding: 25px; border-radius: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); box-sizing: border-box; transition: transform 0.1s ease; }
+        background: #ffffff; border: 4px solid #cbd5e1; padding: 25px; border-radius: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); box-sizing: border-box; transition: transform 0.1s ease; }
         .screen { display: none; }
         .active { display: block; }
         
@@ -139,7 +140,7 @@ body {
         .message-box { min-height: 90px; background: #f8fafc; border-left: 6px solid #3b82f6; padding: 12px; margin-bottom: 12px; font-size: 14px; font-weight: bold; color: #1e293b; line-height: 1.6; box-sizing: border-box; border-radius: 0 12px 12px 0;
         overflow-wrap:anywhere;
         word-break:break-word; }
-        .btn { display: block; width: 100%; padding: 12px; margin: 8px 0; background: #ffffff; color: #334155; border: 2px solid #cbd5e1; border-radius: 12px; cursor: pointer; font-size: 13px; font-weight: bold; transition: all 0.15s ease; text-align: center; }
+        .btn { display: block; width: 100%; padding: 12px; margin: 8px 0; background: #ffffff; color: #334155; border: 2px solid #cbd5e1; border-radius: 12px; cursor: pointer; font-size: 17px; font-weight: bold; transition: all 0.15s ease; text-align: center; }
         .btn:hover:not(:disabled) { background: #f1f5f9; border-color: #3b82f6; transform: translateY(-1px); }
         .btn:disabled { opacity: 0.6; cursor: not-allowed; }
         .center-btn { background: #3b82f6; color: white; border: none; }
@@ -451,7 +452,7 @@ body {
         <div style="display: flex; justify-content: center; margin: 25px 0;">
             <div id="title-avatar-node" class="avatar-frame"><div id="title-aura-layer" class="aura-effect aura-yellow"></div><div id="title-char-layer" class="avatar-character">🐶</div></div>
         </div>
-        <button class="btn center-btn" onclick="changeScreen('screen-avatar')">冒険をはじめる</button>
+        <button class="btn center-btn" onclick="changeScreen('screen-avatar')">スタート</button>
     </div>
 
     <div id="screen-avatar" class="screen">
