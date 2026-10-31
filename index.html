@@ -1688,14 +1688,10 @@ actionLog.forEach((log) => {
             : "×";
 
         const itemClass =
-            log.isCorrect
-            ? "result-item"
-            : "result-item clickable";
+            "result-item clickable";
 
         const clickAttr =
-            log.isCorrect
-            ? ""
-            : 'onclick="toggleExplanation(this)"';
+            'onclick="toggleExplanation(this)"';
 
         logHtml += `
         <div class="${itemClass}" ${clickAttr}>
