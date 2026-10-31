@@ -1704,16 +1704,10 @@ actionLog.forEach((log) => {
                 </div>
             </div>
 
-            ${
-                !log.isCorrect
-                ? `
-                <div class="explanation-box">
-                    <span>💡【解説】</span>
-                    ${log.note}
-                </div>
-                `
-                : ""
-            }
+            <div class="explanation-box">
+                <span>💡【解説】</span>
+                ${log.note}
+            </div>
         </div>
         `;
     });
